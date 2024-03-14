@@ -31,6 +31,11 @@ var defaultConfig = map[string]string{
 	"QIANFAN_LLM_API_RETRY_COUNT":               "1",
 	"QIANFAN_LLM_API_RETRY_BACKOFF_FACTOR":      "0",
 	"QIANFAN_LLM_API_RETRY_TIMEOUT":             "0",
+
+	"SPEECH_AK":    "",
+	"SPEECH_SK":    "",
+	"ASR_BASE_URL": "https://vop.baidu.com/server_api",
+	"TTS_BASE_URL": "https://tsn.baidu.com/text2audio",
 }
 
 // SDK 使用的全局配置，可以用 GetConfig() 获取
@@ -46,6 +51,11 @@ type Config struct {
 	LLMRetryCount                 int     `mapstructure:"QIANFAN_LLM_API_RETRY_COUNT"`
 	LLMRetryTimeout               float32 `mapstructure:"QIANFAN_LLM_API_RETRY_TIMEOUT"`
 	LLMRetryBackoffFactor         float32 `mapstructure:"QIANFAN_LLM_API_RETRY_BACKOFF_FACTOR"`
+
+	SpeechAK   string `mapstructure:"SPEECH_AK"`
+	SpeechSK   string `mapstructure:"SPEECH_SK"`
+	ASRBaseURL string `mapstructure:"ASR_BASE_URL"`
+	TTSBaseURL string `mapstructure:"TTS_BASE_URL"`
 }
 
 func setConfigDeafultValue(vConfig *viper.Viper) {
